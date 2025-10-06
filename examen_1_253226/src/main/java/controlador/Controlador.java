@@ -4,10 +4,26 @@
  */
 package controlador;
 
+import modeloVista.ModeloVista;
+
 /**
  *
  * @author rodri
  */
 public class Controlador {
+    
+    ModeloVista mv;
+    
+    public Controlador(ModeloVista mv) {
+        this.mv = mv;
+    }
+    
+    public void buscadorClientes(String search){
+        mv.buscadorClientes(search);
+    }
+    
+    public void pagar(String numTarjeta){
+        mv.pagar(numTarjeta);
+    }
     
 }

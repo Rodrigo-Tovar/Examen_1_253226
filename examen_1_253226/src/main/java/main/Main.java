@@ -4,6 +4,12 @@
  */
 package main;
 
+import controlador.Controlador;
+import controlador.ControladorVista;
+import modeloNegocios.ModeloNegocios;
+import modeloVista.ModeloVista;
+import vista.PantallaPagoLuz;
+
 /**
  *
  * @author rodri
@@ -14,7 +20,19 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        ModeloVista modeloVista = new ModeloVista();
+        ControladorVista controlVista = new ControladorVista(modeloVista);
+        
+        ModeloNegocios modeloNegocios = new ModeloNegocios(controlVista);
+        modeloVista.setMn(modeloNegocios);
+        
+        Controlador controlador = new Controlador(modeloVista);
+        
+        PantallaPagoLuz pantalla = new PantallaPagoLuz(modeloVista, controlador);
+        pantalla.setVisible(true);
+        
+        modeloNegocios.precargaClientes();
     }
     
 }
