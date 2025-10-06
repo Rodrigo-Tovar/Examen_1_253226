@@ -50,7 +50,7 @@ public class ModeloNegocios {
     public List<Cliente> setClientes() {
         List<Cliente> clientes = new ArrayList<>();
 
-        Recibo recibo1 = new Recibo("1234567890", 500);
+        Recibo recibo1 = new Recibo("0123456789", 500);
         Tarjeta tarjeta1 = new Tarjeta("12345");
         Cliente cliente1 = new Cliente("Rodri", "Por ahi", recibo1, tarjeta1);
         clientes.add(cliente1);
